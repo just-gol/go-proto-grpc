@@ -1,0 +1,24 @@
+syntax= "proto3";
+option go_package = "./goodsService";
+service GoodsService{
+   rpc AddGoods(AddGoodsReq)returns(AddGoodsResp);
+   rpc GetGoods(GetGoodsReq)returns(GetGoodsResp);
+};
+message GoodsModel{
+  string title = 1;
+  string content = 2;
+  double price = 3;
+};
+message AddGoodsReq{
+  GoodsModel goods = 1;
+}
+message AddGoodsResp{
+  string message = 1;
+  bool success = 2;
+};
+message GetGoodsReq{
+  int32 id = 1;
+};
+message GetGoodsResp{
+  repeated GoodsModel goods = 1;
+};
