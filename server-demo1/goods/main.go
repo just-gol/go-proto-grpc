@@ -39,7 +39,7 @@ func (g Goods) GetGoods(c context.Context, in *goods.GetGoodsReq) (*goods.GetGoo
 func main() {
 	grpcServer := grpc.NewServer()
 	goods.RegisterGoodsServer(grpcServer, &Goods{})
-	listen, err := net.Listen("tcp", "127.0.0.1:9090")
+	listen, err := net.Listen("tcp", "127.0.0.1:8080")
 	if err != nil {
 
 	}
