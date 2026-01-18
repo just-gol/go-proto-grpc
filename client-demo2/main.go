@@ -4,9 +4,10 @@ import (
 	"client-demo2/proto/greeter"
 	"context"
 	"fmt"
+	"strconv"
+
 	"github.com/hashicorp/consul/api"
 	"google.golang.org/grpc"
-	"strconv"
 )
 
 func main() {

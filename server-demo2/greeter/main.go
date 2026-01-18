@@ -3,10 +3,11 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/hashicorp/consul/api"
-	"google.golang.org/grpc"
 	"greeter/proto/greeter"
 	"net"
+
+	"github.com/hashicorp/consul/api"
+	"google.golang.org/grpc"
 )
 
 type Hello struct {
