@@ -1,6 +1,7 @@
 package main
 
 import (
+	"client-demo2/proto/goods"
 	"client-demo2/proto/greeter"
 	"context"
 	"fmt"
@@ -40,7 +41,31 @@ func main() {
 		Name: "HelloService",
 	})
 	if err != nil {
+		panic(err)
 	}
-	fmt.Println(resp)
+	fmt.Printf("%v \n", resp.Message)
+
+	//获取goods服务
+	goodsEntry, _, _ := client.Health().Service("GoodsService", "goods", false, nil)
+	goodsAddress := goodsEntry[0].Service.Address + ":" + strconv.Itoa(goodsEntry[0].Service.Port)
+	goodsConn, err := grpc.NewClient(goodsAddress, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	if err != nil {
+		panic(err)
+	}
+	goodsClient := goods.NewGoodsClient(goodsConn)
+	addGoods, err := goodsClient.AddGoods(context.Background(), &goods.AddGoodsReq{
+		Goods: &goods.GoodsModel{
+			Title:   "测试商品",
+			Price:   20,
+			Content: "测试商品的内容"},
+	})
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("%v", addGoods.Message)
+	getGoods, err := goodsClient.GetGoods(context.Background(), &goods.GetGoodsReq{})
+	if err != nil {
+	}
+	fmt.Printf("%v", getGoods)
 
 }
