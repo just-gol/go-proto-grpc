@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v3.21.12
-// source: goods.proto
+// source: server-micro-demo3.proto
 
 package goodsService
 
@@ -83,7 +83,7 @@ func (x *GoodsModel) GetPrice() float64 {
 
 type AddGoodsReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Goods         *GoodsModel            `protobuf:"bytes,1,opt,name=goods,proto3" json:"goods,omitempty"`
+	Goods         *GoodsModel            `protobuf:"bytes,1,opt,name=server-micro-demo3,proto3" json:"server-micro-demo3,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -223,7 +223,7 @@ func (x *GetGoodsReq) GetId() int32 {
 
 type GetGoodsResp struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Goods         []*GoodsModel          `protobuf:"bytes,1,rep,name=goods,proto3" json:"goods,omitempty"`
+	Goods         []*GoodsModel          `protobuf:"bytes,1,rep,name=server-micro-demo3,proto3" json:"server-micro-demo3,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -269,7 +269,7 @@ var File_goods_proto protoreflect.FileDescriptor
 
 const file_goods_proto_rawDesc = "" +
 	"\n" +
-	"\vgoods.proto\"R\n" +
+	"\vserver-micro-demo3.proto\"R\n" +
 	"\n" +
 	"GoodsModel\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12\x18\n" +
@@ -309,8 +309,8 @@ var file_goods_proto_goTypes = []any{
 	(*GetGoodsResp)(nil), // 4: GetGoodsResp
 }
 var file_goods_proto_depIdxs = []int32{
-	0, // 0: AddGoodsReq.goods:type_name -> GoodsModel
-	0, // 1: GetGoodsResp.goods:type_name -> GoodsModel
+	0, // 0: AddGoodsReq.server-micro-demo3:type_name -> GoodsModel
+	0, // 1: GetGoodsResp.server-micro-demo3:type_name -> GoodsModel
 	1, // 2: GoodsService.AddGoods:input_type -> AddGoodsReq
 	3, // 3: GoodsService.GetGoods:input_type -> GetGoodsReq
 	2, // 4: GoodsService.AddGoods:output_type -> AddGoodsResp

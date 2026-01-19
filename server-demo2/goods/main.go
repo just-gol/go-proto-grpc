@@ -45,7 +45,7 @@ func main() {
 	}
 	registration := api.AgentServiceRegistration{
 		ID:      "2",
-		Tags:    []string{"goods"},
+		Tags:    []string{"server-micro-demo3"},
 		Name:    "GoodsService",
 		Port:    9091,
 		Address: "127.0.0.1",

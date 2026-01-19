@@ -46,7 +46,7 @@ func main() {
 	fmt.Printf("%v \n", resp.Message)
 
 	//获取goods服务
-	goodsEntry, _, _ := client.Health().Service("GoodsService", "goods", false, nil)
+	goodsEntry, _, _ := client.Health().Service("GoodsService", "server-micro-demo3", false, nil)
 	goodsAddress := goodsEntry[0].Service.Address + ":" + strconv.Itoa(goodsEntry[0].Service.Port)
 	goodsConn, err := grpc.NewClient(goodsAddress, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {

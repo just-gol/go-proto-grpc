@@ -1,5 +1,5 @@
 syntax = "proto3";
-option go_package = "./goods";
+option go_package = "./server-micro-demo3";
 service Goods{
   rpc AddGoods(AddGoodsReq)returns(AddGoodsRes);
   rpc GetGoods(GetGoodsReq)returns(GetGoodsRes);
