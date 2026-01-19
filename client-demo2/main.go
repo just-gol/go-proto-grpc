@@ -26,7 +26,7 @@ func main() {
 		panic(err)
 	}
 	if len(serviceEntry) == 0 {
-		panic("no service entry for HelloService with tag test")
+		panic("no service-micro-demo1 entry for HelloService with tag test")
 	}
 	fmt.Println(serviceEntry[0].Service.Address)
 	fmt.Println(serviceEntry[0].Service.Port)

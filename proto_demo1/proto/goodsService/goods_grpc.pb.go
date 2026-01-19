@@ -24,7 +24,7 @@ const (
 	GoodsService_GetGoods_FullMethodName = "/GoodsService/GetGoods"
 )
 
-// GoodsServiceClient is the client API for GoodsService service.
+// GoodsServiceClient is the client API for GoodsService service-micro-demo1.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GoodsServiceClient interface {
@@ -60,7 +60,7 @@ func (c *goodsServiceClient) GetGoods(ctx context.Context, in *GetGoodsReq, opts
 	return out, nil
 }
 
-// GoodsServiceServer is the server API for GoodsService service.
+// GoodsServiceServer is the server API for GoodsService service-micro-demo1.
 // All implementations must embed UnimplementedGoodsServiceServer
 // for forward compatibility.
 type GoodsServiceServer interface {
@@ -85,7 +85,7 @@ func (UnimplementedGoodsServiceServer) GetGoods(context.Context, *GetGoodsReq) (
 func (UnimplementedGoodsServiceServer) mustEmbedUnimplementedGoodsServiceServer() {}
 func (UnimplementedGoodsServiceServer) testEmbeddedByValue()                      {}
 
-// UnsafeGoodsServiceServer may be embedded to opt out of forward compatibility for this service.
+// UnsafeGoodsServiceServer may be embedded to opt out of forward compatibility for this service-micro-demo1.
 // Use of this interface is not recommended, as added methods to GoodsServiceServer will
 // result in compilation errors.
 type UnsafeGoodsServiceServer interface {
@@ -139,7 +139,7 @@ func _GoodsService_GetGoods_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-// GoodsService_ServiceDesc is the grpc.ServiceDesc for GoodsService service.
+// GoodsService_ServiceDesc is the grpc.ServiceDesc for GoodsService service-micro-demo1.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GoodsService_ServiceDesc = grpc.ServiceDesc{
