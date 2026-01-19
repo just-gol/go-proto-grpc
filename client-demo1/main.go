@@ -14,7 +14,7 @@ func main() {
 	if err != nil {
 	}
 	client := goods.NewGoodsClient(conn)
-	//hello, err := client.SayHello(context.Background(), &greeter.HelloReq{
+	//hello, err := client.SayHello(context.Background(), &server-micro-demo2.HelloReq{
 	//	Name: "hello",
 	//})
 	//if err != nil {

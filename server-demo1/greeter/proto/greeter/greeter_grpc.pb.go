@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.6.0
 // - protoc             v3.21.12
-// source: greeter.proto
+// source: server-micro-demo2.proto
 
 package greeter
 
@@ -23,7 +23,7 @@ const (
 	Greeter_SayHello_FullMethodName = "/Greeter/SayHello"
 )
 
-// GreeterClient is the client API for Greeter service-micro-demo1.
+// GreeterClient is the client API for Greeter server-micro-demo1.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GreeterClient interface {
@@ -48,7 +48,7 @@ func (c *greeterClient) SayHello(ctx context.Context, in *HelloReq, opts ...grpc
 	return out, nil
 }
 
-// GreeterServer is the server API for Greeter service-micro-demo1.
+// GreeterServer is the server API for Greeter server-micro-demo1.
 // All implementations must embed UnimplementedGreeterServer
 // for forward compatibility.
 type GreeterServer interface {
@@ -69,7 +69,7 @@ func (UnimplementedGreeterServer) SayHello(context.Context, *HelloReq) (*HelloRe
 func (UnimplementedGreeterServer) mustEmbedUnimplementedGreeterServer() {}
 func (UnimplementedGreeterServer) testEmbeddedByValue()                 {}
 
-// UnsafeGreeterServer may be embedded to opt out of forward compatibility for this service-micro-demo1.
+// UnsafeGreeterServer may be embedded to opt out of forward compatibility for this server-micro-demo1.
 // Use of this interface is not recommended, as added methods to GreeterServer will
 // result in compilation errors.
 type UnsafeGreeterServer interface {
@@ -105,7 +105,7 @@ func _Greeter_SayHello_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
-// Greeter_ServiceDesc is the grpc.ServiceDesc for Greeter service-micro-demo1.
+// Greeter_ServiceDesc is the grpc.ServiceDesc for Greeter server-micro-demo1.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Greeter_ServiceDesc = grpc.ServiceDesc{
@@ -118,5 +118,5 @@ var Greeter_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "greeter.proto",
+	Metadata: "server-micro-demo2.proto",
 }

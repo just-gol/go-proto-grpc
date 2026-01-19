@@ -1,5 +1,5 @@
 syntax = "proto3";
-option go_package = "./greeter";
+option go_package = "./server-micro-demo2";
 service GreetService{
   rpc SayHello(HelloReq)returns(HelloResp);
 }

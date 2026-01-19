@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package service;
 
-option go_package = "./proto;service-micro-demo1";
+option go_package = "./proto;server-micro-demo1";
 
 service Service {
 	rpc Call(Request) returns (Response) {}

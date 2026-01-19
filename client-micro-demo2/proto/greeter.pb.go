@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v3.21.12
-// source: proto/service-micro-demo1.proto
+// source: proto/client-micro-demo2.proto
 
-package service
+package greeter
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -30,7 +30,7 @@ type Message struct {
 
 func (x *Message) Reset() {
 	*x = Message{}
-	mi := &file_proto_service_proto_msgTypes[0]
+	mi := &file_proto_greeter_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42,7 +42,7 @@ func (x *Message) String() string {
 func (*Message) ProtoMessage() {}
 
 func (x *Message) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_service_proto_msgTypes[0]
+	mi := &file_proto_greeter_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -55,7 +55,7 @@ func (x *Message) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Message.ProtoReflect.Descriptor instead.
 func (*Message) Descriptor() ([]byte, []int) {
-	return file_proto_service_proto_rawDescGZIP(), []int{0}
+	return file_proto_greeter_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Message) GetSay() string {
@@ -74,7 +74,7 @@ type Request struct {
 
 func (x *Request) Reset() {
 	*x = Request{}
-	mi := &file_proto_service_proto_msgTypes[1]
+	mi := &file_proto_greeter_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -86,7 +86,7 @@ func (x *Request) String() string {
 func (*Request) ProtoMessage() {}
 
 func (x *Request) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_service_proto_msgTypes[1]
+	mi := &file_proto_greeter_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -99,7 +99,7 @@ func (x *Request) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Request.ProtoReflect.Descriptor instead.
 func (*Request) Descriptor() ([]byte, []int) {
-	return file_proto_service_proto_rawDescGZIP(), []int{1}
+	return file_proto_greeter_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Request) GetName() string {
@@ -118,7 +118,7 @@ type Response struct {
 
 func (x *Response) Reset() {
 	*x = Response{}
-	mi := &file_proto_service_proto_msgTypes[2]
+	mi := &file_proto_greeter_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -130,7 +130,7 @@ func (x *Response) String() string {
 func (*Response) ProtoMessage() {}
 
 func (x *Response) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_service_proto_msgTypes[2]
+	mi := &file_proto_greeter_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -143,7 +143,7 @@ func (x *Response) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Response.ProtoReflect.Descriptor instead.
 func (*Response) Descriptor() ([]byte, []int) {
-	return file_proto_service_proto_rawDescGZIP(), []int{2}
+	return file_proto_greeter_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Response) GetMsg() string {
@@ -162,7 +162,7 @@ type StreamingRequest struct {
 
 func (x *StreamingRequest) Reset() {
 	*x = StreamingRequest{}
-	mi := &file_proto_service_proto_msgTypes[3]
+	mi := &file_proto_greeter_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -174,7 +174,7 @@ func (x *StreamingRequest) String() string {
 func (*StreamingRequest) ProtoMessage() {}
 
 func (x *StreamingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_service_proto_msgTypes[3]
+	mi := &file_proto_greeter_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -187,7 +187,7 @@ func (x *StreamingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StreamingRequest.ProtoReflect.Descriptor instead.
 func (*StreamingRequest) Descriptor() ([]byte, []int) {
-	return file_proto_service_proto_rawDescGZIP(), []int{3}
+	return file_proto_greeter_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *StreamingRequest) GetCount() int64 {
@@ -206,7 +206,7 @@ type StreamingResponse struct {
 
 func (x *StreamingResponse) Reset() {
 	*x = StreamingResponse{}
-	mi := &file_proto_service_proto_msgTypes[4]
+	mi := &file_proto_greeter_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -218,7 +218,7 @@ func (x *StreamingResponse) String() string {
 func (*StreamingResponse) ProtoMessage() {}
 
 func (x *StreamingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_service_proto_msgTypes[4]
+	mi := &file_proto_greeter_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -231,7 +231,7 @@ func (x *StreamingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StreamingResponse.ProtoReflect.Descriptor instead.
 func (*StreamingResponse) Descriptor() ([]byte, []int) {
-	return file_proto_service_proto_rawDescGZIP(), []int{4}
+	return file_proto_greeter_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *StreamingResponse) GetCount() int64 {
@@ -241,11 +241,11 @@ func (x *StreamingResponse) GetCount() int64 {
 	return 0
 }
 
-var File_proto_service_proto protoreflect.FileDescriptor
+var File_proto_greeter_proto protoreflect.FileDescriptor
 
-const file_proto_service_proto_rawDesc = "" +
+const file_proto_greeter_proto_rawDesc = "" +
 	"\n" +
-	"\x13proto/service-micro-demo1.proto\x12\aservice-micro-demo1\"\x1b\n" +
+	"\x13proto/client-micro-demo2.proto\x12\aclient-micro-demo2\"\x1b\n" +
 	"\aMessage\x12\x10\n" +
 	"\x03say\x18\x01 \x01(\tR\x03say\"\x1d\n" +
 	"\aRequest\x12\x12\n" +
@@ -256,35 +256,35 @@ const file_proto_service_proto_rawDesc = "" +
 	"\x05count\x18\x01 \x01(\x03R\x05count\")\n" +
 	"\x11StreamingResponse\x12\x14\n" +
 	"\x05count\x18\x01 \x01(\x03R\x05count2}\n" +
-	"\aService\x12-\n" +
-	"\x04Call\x12\x10.service-micro-demo1.Request\x1a\x11.service-micro-demo1.Response\"\x00\x12C\n" +
-	"\x06Stream\x12\x19.service-micro-demo1.StreamingRequest\x1a\x1a.service-micro-demo1.StreamingResponse\"\x000\x01B\x11Z\x0f./proto;serviceb\x06proto3"
+	"\aGreeter\x12-\n" +
+	"\x04Call\x12\x10.client-micro-demo2.Request\x1a\x11.client-micro-demo2.Response\"\x00\x12C\n" +
+	"\x06Stream\x12\x19.client-micro-demo2.StreamingRequest\x1a\x1a.client-micro-demo2.StreamingResponse\"\x000\x01B\x11Z\x0f./proto;greeterb\x06proto3"
 
 var (
-	file_proto_service_proto_rawDescOnce sync.Once
-	file_proto_service_proto_rawDescData []byte
+	file_proto_greeter_proto_rawDescOnce sync.Once
+	file_proto_greeter_proto_rawDescData []byte
 )
 
-func file_proto_service_proto_rawDescGZIP() []byte {
-	file_proto_service_proto_rawDescOnce.Do(func() {
-		file_proto_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_service_proto_rawDesc), len(file_proto_service_proto_rawDesc)))
+func file_proto_greeter_proto_rawDescGZIP() []byte {
+	file_proto_greeter_proto_rawDescOnce.Do(func() {
+		file_proto_greeter_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_greeter_proto_rawDesc), len(file_proto_greeter_proto_rawDesc)))
 	})
-	return file_proto_service_proto_rawDescData
+	return file_proto_greeter_proto_rawDescData
 }
 
-var file_proto_service_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_proto_service_proto_goTypes = []any{
-	(*Message)(nil),           // 0: service-micro-demo1.Message
-	(*Request)(nil),           // 1: service-micro-demo1.Request
-	(*Response)(nil),          // 2: service-micro-demo1.Response
-	(*StreamingRequest)(nil),  // 3: service-micro-demo1.StreamingRequest
-	(*StreamingResponse)(nil), // 4: service-micro-demo1.StreamingResponse
+var file_proto_greeter_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_proto_greeter_proto_goTypes = []any{
+	(*Message)(nil),           // 0: client-micro-demo2.Message
+	(*Request)(nil),           // 1: client-micro-demo2.Request
+	(*Response)(nil),          // 2: client-micro-demo2.Response
+	(*StreamingRequest)(nil),  // 3: client-micro-demo2.StreamingRequest
+	(*StreamingResponse)(nil), // 4: client-micro-demo2.StreamingResponse
 }
-var file_proto_service_proto_depIdxs = []int32{
-	1, // 0: service-micro-demo1.Service.Call:input_type -> service-micro-demo1.Request
-	3, // 1: service-micro-demo1.Service.Stream:input_type -> service-micro-demo1.StreamingRequest
-	2, // 2: service-micro-demo1.Service.Call:output_type -> service-micro-demo1.Response
-	4, // 3: service-micro-demo1.Service.Stream:output_type -> service-micro-demo1.StreamingResponse
+var file_proto_greeter_proto_depIdxs = []int32{
+	1, // 0: client-micro-demo2.Greeter.Call:input_type -> client-micro-demo2.Request
+	3, // 1: client-micro-demo2.Greeter.Stream:input_type -> client-micro-demo2.StreamingRequest
+	2, // 2: client-micro-demo2.Greeter.Call:output_type -> client-micro-demo2.Response
+	4, // 3: client-micro-demo2.Greeter.Stream:output_type -> client-micro-demo2.StreamingResponse
 	2, // [2:4] is the sub-list for method output_type
 	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -292,26 +292,26 @@ var file_proto_service_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_proto_service_proto_init() }
-func file_proto_service_proto_init() {
-	if File_proto_service_proto != nil {
+func init() { file_proto_greeter_proto_init() }
+func file_proto_greeter_proto_init() {
+	if File_proto_greeter_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_service_proto_rawDesc), len(file_proto_service_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_greeter_proto_rawDesc), len(file_proto_greeter_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_proto_service_proto_goTypes,
-		DependencyIndexes: file_proto_service_proto_depIdxs,
-		MessageInfos:      file_proto_service_proto_msgTypes,
+		GoTypes:           file_proto_greeter_proto_goTypes,
+		DependencyIndexes: file_proto_greeter_proto_depIdxs,
+		MessageInfos:      file_proto_greeter_proto_msgTypes,
 	}.Build()
-	File_proto_service_proto = out.File
-	file_proto_service_proto_goTypes = nil
-	file_proto_service_proto_depIdxs = nil
+	File_proto_greeter_proto = out.File
+	file_proto_greeter_proto_goTypes = nil
+	file_proto_greeter_proto_depIdxs = nil
 }

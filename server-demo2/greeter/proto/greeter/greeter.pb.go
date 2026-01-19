@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v3.21.12
-// source: greeter.proto
+// source: server-micro-demo2.proto
 
 package greeter
 
