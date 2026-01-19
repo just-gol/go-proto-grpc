@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v3.21.12
-// source: proto/server-micro-demo2.proto
+// source: proto/greeter.proto
 
 package greeter
 
@@ -245,7 +245,7 @@ var File_proto_greeter_proto protoreflect.FileDescriptor
 
 const file_proto_greeter_proto_rawDesc = "" +
 	"\n" +
-	"\x13proto/server-micro-demo2.proto\x12\aserver-micro-demo2\"\x1b\n" +
+	"\x13proto/greeter.proto\x12\agreeter\"\x1b\n" +
 	"\aMessage\x12\x10\n" +
 	"\x03say\x18\x01 \x01(\tR\x03say\"\x1d\n" +
 	"\aRequest\x12\x12\n" +
@@ -257,8 +257,8 @@ const file_proto_greeter_proto_rawDesc = "" +
 	"\x11StreamingResponse\x12\x14\n" +
 	"\x05count\x18\x01 \x01(\x03R\x05count2}\n" +
 	"\aGreeter\x12-\n" +
-	"\x04Call\x12\x10.server-micro-demo2.Request\x1a\x11.server-micro-demo2.Response\"\x00\x12C\n" +
-	"\x06Stream\x12\x19.server-micro-demo2.StreamingRequest\x1a\x1a.server-micro-demo2.StreamingResponse\"\x000\x01B\x11Z\x0f./proto;greeterb\x06proto3"
+	"\x04Call\x12\x10.greeter.Request\x1a\x11.greeter.Response\"\x00\x12C\n" +
+	"\x06Stream\x12\x19.greeter.StreamingRequest\x1a\x1a.greeter.StreamingResponse\"\x000\x01B\x11Z\x0f./proto;greeterb\x06proto3"
 
 var (
 	file_proto_greeter_proto_rawDescOnce sync.Once
@@ -274,17 +274,17 @@ func file_proto_greeter_proto_rawDescGZIP() []byte {
 
 var file_proto_greeter_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_proto_greeter_proto_goTypes = []any{
-	(*Message)(nil),           // 0: server-micro-demo2.Message
-	(*Request)(nil),           // 1: server-micro-demo2.Request
-	(*Response)(nil),          // 2: server-micro-demo2.Response
-	(*StreamingRequest)(nil),  // 3: server-micro-demo2.StreamingRequest
-	(*StreamingResponse)(nil), // 4: server-micro-demo2.StreamingResponse
+	(*Message)(nil),           // 0: greeter.Message
+	(*Request)(nil),           // 1: greeter.Request
+	(*Response)(nil),          // 2: greeter.Response
+	(*StreamingRequest)(nil),  // 3: greeter.StreamingRequest
+	(*StreamingResponse)(nil), // 4: greeter.StreamingResponse
 }
 var file_proto_greeter_proto_depIdxs = []int32{
-	1, // 0: server-micro-demo2.Greeter.Call:input_type -> server-micro-demo2.Request
-	3, // 1: server-micro-demo2.Greeter.Stream:input_type -> server-micro-demo2.StreamingRequest
-	2, // 2: server-micro-demo2.Greeter.Call:output_type -> server-micro-demo2.Response
-	4, // 3: server-micro-demo2.Greeter.Stream:output_type -> server-micro-demo2.StreamingResponse
+	1, // 0: greeter.Greeter.Call:input_type -> greeter.Request
+	3, // 1: greeter.Greeter.Stream:input_type -> greeter.StreamingRequest
+	2, // 2: greeter.Greeter.Call:output_type -> greeter.Response
+	4, // 3: greeter.Greeter.Stream:output_type -> greeter.StreamingResponse
 	2, // [2:4] is the sub-list for method output_type
 	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

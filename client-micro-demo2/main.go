@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	name    = "greeter"
+	name    = "greeter-client"
 	version = "latest"
 )
 
@@ -21,7 +21,6 @@ func main() {
 	// Create service
 	service := micro.NewService(
 		micro.Name(name),
-		micro.Version(version),
 		micro.Registry(registry),
 	)
 
@@ -29,7 +28,7 @@ func main() {
 	service.Init()
 
 	// Register handler
-	greeterService := pb.NewGreeterService(name, service.Client())
+	greeterService := pb.NewGreeterService("greeter", service.Client())
 	call, err := greeterService.Call(context.Background(), &pb.Request{
 		Name: "hello",
 	})
@@ -38,6 +37,5 @@ func main() {
 	}
 	fmt.Println(call)
 
-	// Run service
-	service.Run()
+	// 客户端不需要 Run
 }

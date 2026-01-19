@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package greeter;
 
-option go_package = "./proto;client-micro-demo2";
+option go_package = "./proto;greeter";
 
 service Greeter {
 	rpc Call(Request) returns (Response) {}
