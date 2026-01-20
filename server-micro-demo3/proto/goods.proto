@@ -6,14 +6,22 @@ option go_package = "./proto;goods";
 
 service Goods {
 	rpc AddGoods(AddGoodsReq)returns(AddGoodsResp);
+  rpc GetGoods(GetGoodsReq)returns(GetGoodsResp);
 }
-
-message  AddGoodsReq{
+message GoodsModel{
   string title =1;
   double price =2 ;
   string content = 3;
 }
+message  AddGoodsReq{
+ GoodsModel goodsModel = 1;
+}
 message AddGoodsResp{
   string msg = 1;
   string code = 2;
+}
+message GetGoodsReq{}
+
+message GetGoodsResp{
+ repeated GoodsModel goodsList = 1;
 }

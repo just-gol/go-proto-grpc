@@ -15,9 +15,11 @@ func (con GoodsController) Index(c *gin.Context) {
 	goodsService := pb.NewGoodsService("goods", models.MicroClient)
 
 	goods, err := goodsService.AddGoods(c.Request.Context(), &pb.AddGoodsReq{
-		Title:   "gin-demo",
-		Price:   1000,
-		Content: "测试gin-demo",
+		GoodsModel: &pb.GoodsModel{
+			Title:   "添加商品",
+			Price:   1000,
+			Content: "这是一个商品",
+		},
 	})
 	if err != nil {
 		log.Fatalf("add goods err: %v", err)
@@ -30,6 +32,14 @@ func (con GoodsController) Index(c *gin.Context) {
 	})
 
 }
-func (con GoodsController) News(c *gin.Context) {
-	c.String(200, "News")
+func (con GoodsController) GetGoods(c *gin.Context) {
+	goodsService := pb.NewGoodsService("goods", models.MicroClient)
+	goods, err := goodsService.GetGoods(c.Request.Context(), &pb.GetGoodsReq{})
+	if err != nil {
+		log.Fatalf("get goods err: %v", err)
+	}
+	log.Info(goods)
+	c.JSON(http.StatusOK, gin.H{
+		"data": goods,
+	})
 }

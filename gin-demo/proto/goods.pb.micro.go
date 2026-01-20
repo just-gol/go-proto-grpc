@@ -29,6 +29,7 @@ var _ server.Option
 
 type GoodsService interface {
 	AddGoods(ctx context.Context, in *AddGoodsReq, opts ...client.CallOption) (*AddGoodsResp, error)
+	GetGoods(ctx context.Context, in *GetGoodsReq, opts ...client.CallOption) (*GetGoodsResp, error)
 }
 
 type goodsService struct {
@@ -53,15 +54,27 @@ func (c *goodsService) AddGoods(ctx context.Context, in *AddGoodsReq, opts ...cl
 	return out, nil
 }
 
+func (c *goodsService) GetGoods(ctx context.Context, in *GetGoodsReq, opts ...client.CallOption) (*GetGoodsResp, error) {
+	req := c.c.NewRequest(c.name, "Goods.GetGoods", in)
+	out := new(GetGoodsResp)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // Server API for Goods service
 
 type GoodsHandler interface {
 	AddGoods(context.Context, *AddGoodsReq, *AddGoodsResp) error
+	GetGoods(context.Context, *GetGoodsReq, *GetGoodsResp) error
 }
 
 func RegisterGoodsHandler(s server.Server, hdlr GoodsHandler, opts ...server.HandlerOption) error {
 	type goods interface {
 		AddGoods(ctx context.Context, in *AddGoodsReq, out *AddGoodsResp) error
+		GetGoods(ctx context.Context, in *GetGoodsReq, out *GetGoodsResp) error
 	}
 	type Goods struct {
 		goods
@@ -76,4 +89,8 @@ type goodsHandler struct {
 
 func (h *goodsHandler) AddGoods(ctx context.Context, in *AddGoodsReq, out *AddGoodsResp) error {
 	return h.GoodsHandler.AddGoods(ctx, in, out)
+}
+
+func (h *goodsHandler) GetGoods(ctx context.Context, in *GetGoodsReq, out *GetGoodsResp) error {
+	return h.GoodsHandler.GetGoods(ctx, in, out)
 }

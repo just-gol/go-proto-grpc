@@ -21,7 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type AddGoodsReq struct {
+type GoodsModel struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
 	Price         float64                `protobuf:"fixed64,2,opt,name=price,proto3" json:"price,omitempty"`
@@ -30,9 +30,67 @@ type AddGoodsReq struct {
 	sizeCache     protoimpl.SizeCache
 }
 
+func (x *GoodsModel) Reset() {
+	*x = GoodsModel{}
+	mi := &file_proto_goods_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GoodsModel) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GoodsModel) ProtoMessage() {}
+
+func (x *GoodsModel) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_goods_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GoodsModel.ProtoReflect.Descriptor instead.
+func (*GoodsModel) Descriptor() ([]byte, []int) {
+	return file_proto_goods_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *GoodsModel) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *GoodsModel) GetPrice() float64 {
+	if x != nil {
+		return x.Price
+	}
+	return 0
+}
+
+func (x *GoodsModel) GetContent() string {
+	if x != nil {
+		return x.Content
+	}
+	return ""
+}
+
+type AddGoodsReq struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	GoodsModel    *GoodsModel            `protobuf:"bytes,1,opt,name=goodsModel,proto3" json:"goodsModel,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
 func (x *AddGoodsReq) Reset() {
 	*x = AddGoodsReq{}
-	mi := &file_proto_goods_proto_msgTypes[0]
+	mi := &file_proto_goods_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44,7 +102,7 @@ func (x *AddGoodsReq) String() string {
 func (*AddGoodsReq) ProtoMessage() {}
 
 func (x *AddGoodsReq) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_goods_proto_msgTypes[0]
+	mi := &file_proto_goods_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,28 +115,14 @@ func (x *AddGoodsReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddGoodsReq.ProtoReflect.Descriptor instead.
 func (*AddGoodsReq) Descriptor() ([]byte, []int) {
-	return file_proto_goods_proto_rawDescGZIP(), []int{0}
+	return file_proto_goods_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *AddGoodsReq) GetTitle() string {
+func (x *AddGoodsReq) GetGoodsModel() *GoodsModel {
 	if x != nil {
-		return x.Title
+		return x.GoodsModel
 	}
-	return ""
-}
-
-func (x *AddGoodsReq) GetPrice() float64 {
-	if x != nil {
-		return x.Price
-	}
-	return 0
-}
-
-func (x *AddGoodsReq) GetContent() string {
-	if x != nil {
-		return x.Content
-	}
-	return ""
+	return nil
 }
 
 type AddGoodsResp struct {
@@ -91,7 +135,7 @@ type AddGoodsResp struct {
 
 func (x *AddGoodsResp) Reset() {
 	*x = AddGoodsResp{}
-	mi := &file_proto_goods_proto_msgTypes[1]
+	mi := &file_proto_goods_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -103,7 +147,7 @@ func (x *AddGoodsResp) String() string {
 func (*AddGoodsResp) ProtoMessage() {}
 
 func (x *AddGoodsResp) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_goods_proto_msgTypes[1]
+	mi := &file_proto_goods_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -116,7 +160,7 @@ func (x *AddGoodsResp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddGoodsResp.ProtoReflect.Descriptor instead.
 func (*AddGoodsResp) Descriptor() ([]byte, []int) {
-	return file_proto_goods_proto_rawDescGZIP(), []int{1}
+	return file_proto_goods_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *AddGoodsResp) GetMsg() string {
@@ -133,20 +177,109 @@ func (x *AddGoodsResp) GetCode() string {
 	return ""
 }
 
+type GetGoodsReq struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetGoodsReq) Reset() {
+	*x = GetGoodsReq{}
+	mi := &file_proto_goods_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetGoodsReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetGoodsReq) ProtoMessage() {}
+
+func (x *GetGoodsReq) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_goods_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetGoodsReq.ProtoReflect.Descriptor instead.
+func (*GetGoodsReq) Descriptor() ([]byte, []int) {
+	return file_proto_goods_proto_rawDescGZIP(), []int{3}
+}
+
+type GetGoodsResp struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	GoodsList     []*GoodsModel          `protobuf:"bytes,1,rep,name=goodsList,proto3" json:"goodsList,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetGoodsResp) Reset() {
+	*x = GetGoodsResp{}
+	mi := &file_proto_goods_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetGoodsResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetGoodsResp) ProtoMessage() {}
+
+func (x *GetGoodsResp) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_goods_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetGoodsResp.ProtoReflect.Descriptor instead.
+func (*GetGoodsResp) Descriptor() ([]byte, []int) {
+	return file_proto_goods_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *GetGoodsResp) GetGoodsList() []*GoodsModel {
+	if x != nil {
+		return x.GoodsList
+	}
+	return nil
+}
+
 var File_proto_goods_proto protoreflect.FileDescriptor
 
 const file_proto_goods_proto_rawDesc = "" +
 	"\n" +
-	"\x11proto/goods.proto\x12\x05goods\"S\n" +
-	"\vAddGoodsReq\x12\x14\n" +
+	"\x11proto/goods.proto\x12\x05goods\"R\n" +
+	"\n" +
+	"GoodsModel\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12\x14\n" +
 	"\x05price\x18\x02 \x01(\x01R\x05price\x12\x18\n" +
-	"\acontent\x18\x03 \x01(\tR\acontent\"4\n" +
+	"\acontent\x18\x03 \x01(\tR\acontent\"@\n" +
+	"\vAddGoodsReq\x121\n" +
+	"\n" +
+	"goodsModel\x18\x01 \x01(\v2\x11.goods.GoodsModelR\n" +
+	"goodsModel\"4\n" +
 	"\fAddGoodsResp\x12\x10\n" +
 	"\x03msg\x18\x01 \x01(\tR\x03msg\x12\x12\n" +
-	"\x04code\x18\x02 \x01(\tR\x04code2<\n" +
+	"\x04code\x18\x02 \x01(\tR\x04code\"\r\n" +
+	"\vGetGoodsReq\"?\n" +
+	"\fGetGoodsResp\x12/\n" +
+	"\tgoodsList\x18\x01 \x03(\v2\x11.goods.GoodsModelR\tgoodsList2q\n" +
 	"\x05Goods\x123\n" +
-	"\bAddGoods\x12\x12.goods.AddGoodsReq\x1a\x13.goods.AddGoodsRespB\x0fZ\r./proto;goodsb\x06proto3"
+	"\bAddGoods\x12\x12.goods.AddGoodsReq\x1a\x13.goods.AddGoodsResp\x123\n" +
+	"\bGetGoods\x12\x12.goods.GetGoodsReq\x1a\x13.goods.GetGoodsRespB\x0fZ\r./proto;goodsb\x06proto3"
 
 var (
 	file_proto_goods_proto_rawDescOnce sync.Once
@@ -160,19 +293,26 @@ func file_proto_goods_proto_rawDescGZIP() []byte {
 	return file_proto_goods_proto_rawDescData
 }
 
-var file_proto_goods_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_proto_goods_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_proto_goods_proto_goTypes = []any{
-	(*AddGoodsReq)(nil),  // 0: goods.AddGoodsReq
-	(*AddGoodsResp)(nil), // 1: goods.AddGoodsResp
+	(*GoodsModel)(nil),   // 0: goods.GoodsModel
+	(*AddGoodsReq)(nil),  // 1: goods.AddGoodsReq
+	(*AddGoodsResp)(nil), // 2: goods.AddGoodsResp
+	(*GetGoodsReq)(nil),  // 3: goods.GetGoodsReq
+	(*GetGoodsResp)(nil), // 4: goods.GetGoodsResp
 }
 var file_proto_goods_proto_depIdxs = []int32{
-	0, // 0: goods.Goods.AddGoods:input_type -> goods.AddGoodsReq
-	1, // 1: goods.Goods.AddGoods:output_type -> goods.AddGoodsResp
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	0, // 0: goods.AddGoodsReq.goodsModel:type_name -> goods.GoodsModel
+	0, // 1: goods.GetGoodsResp.goodsList:type_name -> goods.GoodsModel
+	1, // 2: goods.Goods.AddGoods:input_type -> goods.AddGoodsReq
+	3, // 3: goods.Goods.GetGoods:input_type -> goods.GetGoodsReq
+	2, // 4: goods.Goods.AddGoods:output_type -> goods.AddGoodsResp
+	4, // 5: goods.Goods.GetGoods:output_type -> goods.GetGoodsResp
+	4, // [4:6] is the sub-list for method output_type
+	2, // [2:4] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_proto_goods_proto_init() }
@@ -186,7 +326,7 @@ func file_proto_goods_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_goods_proto_rawDesc), len(file_proto_goods_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
