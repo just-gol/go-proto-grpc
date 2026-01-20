@@ -11,5 +11,6 @@ func DefaultRoutersInit(r *gin.Engine) {
 	{
 		defaultRouters.GET("/", it.DefaultController{}.Index)
 		defaultRouters.GET("/news", it.DefaultController{}.News)
+		defaultRouters.GET("/goods", it.GoodsController{}.Index)
 	}
 }
